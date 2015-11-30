@@ -1,9 +1,8 @@
 // jshint devel:true
 'use strict';
-/* Since this is just one graph there is no requirement to load whole library.
- *  This function allows us to draw a graph more limited in how it can appear.
- *  If more flexibilty is required when the graph is used as part of a larger application the library may become more useful.
- */
+/*
+* A JS plugin which will apply snowfall to an element. Gives the element a class called fallback if canvas isn't supported.
+*/
 
 var requestAnimationFrame =
     window.requestAnimationFrame ||
@@ -17,11 +16,13 @@ var requestAnimationFrame =
 function SnowDrawer(parentId) {
     //Set up required variables
     var parent = document.getElementById(parentId);
+    parent.style.position = "relative";
 
     //Build canvas and prepend it
     var c = document.createElement("canvas");
     c.className = c.className + " falling-snow";
     parent.insertBefore(c, parent.firstChild);
+    c.style.position = 'absolute';
 
     //Set up initial vars
     var W = (parent)? parent.clientWidth : window.innerWidth;
