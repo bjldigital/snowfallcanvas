@@ -20,3 +20,7 @@ If HTML Canvas isn't available it will create a HTML element which will have the
     background-image: url('../img/bg-snow.png');
     background-size: 100%;
   }```
+
+## License
+
+Copyright (c) 2015 Eliot Fallon and contributors, licensed under the MIT license. See `LICENSE.md` for details.
