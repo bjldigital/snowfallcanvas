@@ -1,7 +1,9 @@
 # Blizzard Builder
 Adds snowfall to any HTML element
 
-To install with bower
+To install with bower:
+
+```bower install blizzard-builder```
 
 To use in your page reference the canavs-snow.js file and create a new Blizzard object passing it the ID of the element you'd like to attach it to:
 
