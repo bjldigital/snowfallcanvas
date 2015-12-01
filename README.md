@@ -1,4 +1,4 @@
-# snowfallcanvas
+# Blizzard Builder
 Adds snowfall to any HTML element
 
 To install with bower
