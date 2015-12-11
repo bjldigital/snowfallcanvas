@@ -1,6 +1,6 @@
 {
   "name": "blizzard-builder",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "homepage": "https://github.com/bjldigital/snowfallcanvas",
   "description": "Adds Canvas snowfall to a HTMl element where available or the class 'fallback' where it isn't",
   "main": "canvas-snow.js",
