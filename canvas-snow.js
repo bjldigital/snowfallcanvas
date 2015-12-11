@@ -4,7 +4,20 @@
 * A JS plugin which will apply snowfall to an element. Gives the element a class called fallback if canvas isn't supported.
 */
 
-var requestAnimationFrame =
+function Blizzard(parentId, customOptions) {
+
+    var options = {
+        'flakeDensity': 2,
+        'fallingSpeed': 8
+    };
+    if(customOptions.hasOwnProperty('flakeDensity')) options.flakeDensity = customOptions.flakeDensity;
+    if(customOptions.hasOwnProperty('fallingSpeed')) options.fallingSpeed = customOptions.fallingSpeed;
+
+    //Set up required variables
+    var parent = document.getElementById(parentId);
+    parent.style.position = "relative";
+
+    var requestAnimationFrame =
     window.requestAnimationFrame ||
     window.mozRequestAnimationFrame ||
     window.msRequestAnimationFrame ||
@@ -12,11 +25,6 @@ var requestAnimationFrame =
     function(callback) {
         return setTimeout(callback, 1);
     };
-
-function Blizzard(parentId) {
-    //Set up required variables
-    var parent = document.getElementById(parentId);
-    parent.style.position = "relative";
 
     //Build canvas and prepend it
     var c = document.createElement("canvas");
@@ -27,6 +35,7 @@ function Blizzard(parentId) {
     //Set up initial vars
     var W = (parent)? parent.clientWidth : window.innerWidth;
     var H = (parent)? parent.clientHeight : window.innerHeight;
+
     var numFlakes =0;
     var flakes = [];
     var ctx = c.getContext("2d");
@@ -53,7 +62,7 @@ function Blizzard(parentId) {
         c.height = H;
 
         //This varies the number of snowflakes showing dependent on size of the element
-        numFlakes = Math.floor(W / 25);
+        numFlakes = Math.floor(W / (10/ options.flakeDensity));
         ctx.clearRect(0, 0, W, H);
 
         //snowflake flakes
@@ -94,8 +103,8 @@ function Blizzard(parentId) {
 
             var p = flakes[i];
             //Updating X and Y coordinates
-            p.y += (Math.cos(angle) + 0.5 + p.r) / 8;
-            p.x += Math.sin(angle) * 2;
+            p.y += (Math.cos(angle) + 0.5 + p.r) / (10/options.fallingSpeed);
+            p.x += Math.sin(angle) * 0.75;
 
 
             //Checks if flakes has left screen

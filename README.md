@@ -21,6 +21,34 @@ If HTML Canvas isn't available it will create a HTML element which will have the
     background-size: 100%;
   }```
 
+##Options
+
+By passing an options variable into the Blizzard object you can change the appearence of the snowfall.
+
+###Flake density
+
+`flakeDensity`:
+
+The number of flakes changes dependent on how wide the parent element is. You can change the flake density by setting the ```flakeDensity``` option.
+
+###Falling speed
+
+`fallingSpeed`:
+
+The speed with which the flakes fall.
+
+###Examples with options set
+
+``` <script type='text/javascript' src='../canvas-snow.js'></script>
+    <script>
+      var options = {
+        flakeDensity: 3,
+        fallingSpeed: 3
+      };
+      var falling = new Blizzard('parentID');
+    </script>```
+
+
 ## License
 
 Copyright (c) 2015 Eliot Fallon and contributors, licensed under the MIT license. See `LICENSE.md` for details.

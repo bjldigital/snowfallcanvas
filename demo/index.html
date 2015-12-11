@@ -283,9 +283,17 @@
     <div class="mobile-underlay"></div>
     <!-- DEMO -->
     <!-- ADD THIS TO YOUR OWN PAGE IN THE FOOTER AND UPDATE canvas-snow.js LOCATON TO ADD SNOW -->
-    <script type='text/javascript' src='../canvas-snow.js'></script>
+    <script type='text/javascript' src='../canvas-snow.min.js'></script>
     <script>
-    var falling = new Blizzard('snowParent');
+
+        //Timeout is required as we have Masonry on the page positioning the images
+        setTimeout(function() {
+            var options = {
+                flakeDensity: 3,
+                fallingSpeed: 3
+            };
+            var falling = new Blizzard('snowParent', options);
+        }, 100);
     </script>
     <!-- DEMO END -->
 </body>
