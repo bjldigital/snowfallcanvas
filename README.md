@@ -27,13 +27,13 @@ By passing an options variable into the Blizzard object you can change the appea
 
 ###Flake density
 
-`flakeDensity`:
+`flakeDensity`
 
 The number of flakes changes dependent on how wide the parent element is. You can change the flake density by setting the ```flakeDensity``` option.
 
 ###Falling speed
 
-`fallingSpeed`:
+`fallingSpeed`
 
 The speed with which the flakes fall.
 
